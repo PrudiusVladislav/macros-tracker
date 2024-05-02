@@ -2,18 +2,25 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
+interface HeaderProps {
+    to : string;
+    children: string;
+    selected: boolean;
+    onClick: () => void;
+}
+
 function Logo() {
   return (
-    <div className="text-3xl mb-40 ml-4 mt-5">
+    <div className="text-4xl mb-40 ml-4 mt-5 font-bold">
         <a href="/">MyMacros</a>
     </div>
   );
 }
 
-function NavLink({ to, children, selected, onClick }: { to: string, children: string, selected: boolean, onClick: () => void }){
+function NavLink({ to, children, selected, onClick }: HeaderProps){
   return (
     <Link 
-      className={`nav-link px-6 py-2 rounded text-2xl ${selected ? 'bg-gray-700' : 'hover:bg-gray-700'}`} 
+      className={`px-6 py-2 rounded text-2xl ${selected ? 'bg-nav-menu-hover' : 'hover:bg-nav-menu-hover'}`} 
       to={to} 
       onClick={onClick}
     >
@@ -26,7 +33,7 @@ function NavBar() {
   const [selectedLink, setSelectedLink] = useState('/');
 
   return (
-    <nav className="flex flex-col items-center bg-gray-800 text-white w-80 h-screen px-4 py-2">
+    <nav className="flex flex-col items-center bg-main-bg-darker text-main-text w-80 h-screen px-4 py-2">
       <Logo />
       <ul className="space-y-7">
         <li>

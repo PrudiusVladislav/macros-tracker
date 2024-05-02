@@ -33,6 +33,15 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --main-text: #132862;
+    --main-bg: #fef6e4;
+    --main-bg-darker: #f1ead9;
+    --toggles-blue: #8bd3dd;
+    --buttons-pink: #f582ae;
+    --secondary-bg: #bbdadd;
+    --secondary-text: #989cac;
+    --nav-menu-hover: #f3d2c1;
 }
 
 .dark {
@@ -72,5 +81,6 @@
     }
     body {
         @apply bg-background text-foreground;
+        background-color: var(--secondary-bg);
     }
 }
