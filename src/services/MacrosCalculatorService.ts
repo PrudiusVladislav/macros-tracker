@@ -1,12 +1,12 @@
 
 export interface MacrosCalcParams {
-    system: ('metric' | 'imperial');
-    gender: ('male' | 'female');
-    goal: ('lose' | 'maintain' | 'gain');
+    system: string;
+    gender: string;
+    goal: string;
     age: number;
     height: number;
     weight: number;
-    activityLevel: ('sedentary' | 'moderate' | 'active');
+    activityLevel: string;
 }
 
 export interface Macros {
@@ -36,6 +36,8 @@ export class MacrosCalculatorService {
             case 'active':
                 multiplier = 1.9;
                 break;
+            default:
+                multiplier = 1.2;
         }
         let totalCalories = bmr * multiplier;
 
