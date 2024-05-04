@@ -33,9 +33,9 @@ function NavBar() {
   const [selectedLink, setSelectedLink] = useState('/');
 
   return (
-    <nav className="flex flex-col items-center bg-main-bg-darker text-main-text w-80 h-screen px-4 py-2">
+    <nav className="flex flex-col items-center bg-main-bg-darker text-main-text w-66 h-screen px-4 py-2">
       <Logo />
-      <ul className="space-y-7">
+      <ul className="space-y-10">
         <li>
           <NavLink 
             to="/" 
